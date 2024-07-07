@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="image/png" href="/public/sushi.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>美味しい寿司</title>
+    <style>
+      /*=============== MODAL STYLES ===============*/
+      .modal {
+        display: none; 
+        position: fixed; 
+        z-index: 10; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgb(0,0,0); 
+        background-color: rgba(0,0,0,0.4); 
+      }
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: 10% auto; 
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px;
+        text-align: center;
+        border-radius: 10px;
+      }
+
+      .modal .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .modal .close:hover,
+      .modal .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .modal-img {
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+        border-radius: 10px;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-top: 20px;
+        border-radius: 5px;
+        background-color: #ff6347;
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--=============== MODAL ===============-->
+    <div id="restaurantInfoModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>美味しい寿司へようこそ</h2>
+        <p>美味しい寿司は、新鮮で高品質な材料を使用した本格的な日本の寿司を提供するレストランです。お客様に最高の食事体験をお届けするために、私たちは常に最高のサービスを提供することをお約束します。</p>
+        <img src="assets/sushi-2.png" alt="Restaurant Info" class="modal-img">
+      </div>
+    </div>
+
+    <header>
+      <nav class="header__nav">
+        <div class="header__logo">
+          <h4 data-aos="fade-down">美味しい寿司</h4>
+          <div class="header__logo-overlay"></div>
+        </div>
+
+        <ul class="header__menu" data-aos="fade-down">
+          <li>
+            <a href="#menu">メニュー</a>
+          </li>
+          <li>
+            <a href="#food">食べ物</a>
+          </li>
+          <li>
+            <a href="#services">サービス</a>
+          </li>
+          <li>
+            <a href="#about-us">私たちに関しては</a>
+          </li>
+          <li>
+            <img src="assets/search.svg" alt="search" />
+          </li>
+        </ul>
+
+        <ul class="header__menu-mobile" data-aos="fade-down">
+          <li>
+            <img src="assets/menu.svg" alt="menu" />
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-image">
+        <img src="assets/sushi-1.png" alt="sushi" data-aos="fade-up" />
+        <h2 data-aos="fade-up">
+          美 <br />
+          味 <br />
+          寿 <br />
+          司
+        </h2>
+        <div class="hero-image__overlay"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-content-info" data-aos="fade-left">
+          <h1>最も人気のある日本食の味を感じてください</h1>
+          <p>
+            どこからでも、いつでも、最も人気のある日本食の味を感じてください
+          </p>
+
+          <div class="hero-content__buttons">
+            <button class="hero-content__order-button">今すぐ注文</button>
+            <button class="hero-content__play-button">
+              <img src="assets/play-circle.svg" alt="play" />
+              注文方法
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-content__testimonial" data-aos="fade-up">
+          <div class="hero-content__customer flex-center">
+            <h4>24<span>4k+</span></h4>
+            <p>満足したお客様</p>
+          </div>
+
+          <div class="hero-content__review">
+            <img src="assets/user.png" alt="user" />
+            <p>
+              "これは今までで最高の日本食デリバリーサービスです。"
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-us" id="about-us">
+      <div class="about-us__image">
+        <div class="about-us__image-sushi3">
+          <img src="assets/sushi-3.png" alt="sushi" data-aos="fade-right" />
+        </div>
+
+        <button class="about-us__button">
+          もっと詳しく知る
+
+          <img src="assets/arrow-up-right.svg" alt="learn more" />
+        </button>
+        <div class="about-us__image-sushi2">
+          <img src="assets/sushi-2.png" alt="sushi" data-aos="fade-right" />
+        </div>
+      </div>
+
+      <div class="about-us__content">
+        <p class="sushi__subtitle">私たちに関しては / 本物の日本の風味をお届けする使命</p>
+        <h3 class="sushi__title">
+          本物の日本の風味をお届けする使命
+        </h3>
+        <p class="sushi__description">
+          お客様にお買い物やお食事の際に、おもてなしの心を提供し続けます。
+        </p>
+      </div>
+    </section>
+
+    <section class="sushi-process" id="sushi-process">
+      <h2 class="section__title" data-aos="flip-up">
+        寿司の作り方
+      </h2>
+      <div class="sushi-process__container" data-aos="fade-up">
+        <article class="sushi-process__card">
+          <h3 class="sushi-process__title">新鮮な魚を選ぶ</h3>
+          <p class="sushi-process__description">最高の寿司のために、新鮮で高品質の魚を選びます。</p>
+        </article>
+        <article class="sushi-process__card">
+          <h3 class="sushi-process__title">適切な米の準備</h3>
+          <p class="sushi-process__description">寿司米は特別な方法で調理し、適切な食感と味を確保します。</p>
+        </article>
+        <article class="sushi-process__card">
+          <h3 class="sushi-process__title">伝統的な技法</h3>
+          <p class="sushi-process__description">伝統的な技法を用いて、寿司を丁寧に巻き上げます。</p>
+        </article>
+        <article class="sushi-process__card">
+          <h3 class="sushi-process__title">新鮮な素材を使用</h3>
+          <p class="sushi-process__description">新鮮な食材を使用して、美味しさと健康を提供します。</p>
+        </article>
+        <article class="sushi-process__card">
+          <h3 class="sushi-process__title">見た目の美しさ</h3>
+          <p class="sushi-process__description">寿司は見た目も美しく、目でも楽しめる料理です。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="special-sushi" id="special-sushi">
+      <h2 class="section__title" data-aos="flip-up">
+        特別な寿司
+      </h2>
+      <div class="special-sushi__container" data-aos="fade-up">
+        <article class="special-sushi__card">
+          <h3 class="special-sushi__title">独自のレシピ</h3>
+          <p class="special-sushi__description">私たちの寿司は独自のレシピで作られ、他では味わえない風味を提供します。</p>
+        </article>
+        <article class="special-sushi__card">
+          <h3 class="special-sushi__title">厳選された材料</h3>
+          <p class="special-sushi__description">最高の品質を保証するために、厳選された材料のみを使用しています。</p>
+        </article>
+        <article class="special-sushi__card">
+          <h3 class="special-sushi__title">熟練の職人</h3>
+          <p class="special-sushi__description">熟練の職人が一つ一つ丁寧に作り上げる寿司です。</p>
+        </article>
+        <article class="special-sushi__card">
+          <h3 class="special-sushi__title">独特のプレゼンテーション</h3>
+          <p class="special-sushi__description">私たちの寿司は見た目も美しく、食事を一層楽しませます。</p>
+        </article>
+        <article class="special-sushi__card">
+          <h3 class="special-sushi__title">持続可能な取り組み</h3>
+          <p class="special-sushi__description">環境に配慮した持続可能な取り組みを行っています。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="popular-foods" id="menu">
+      <h2 class="popular-foods__title" data-aos="flip-up">
+        人気の料理 / 人気
+      </h2>
+
+      <div
+        class="popular-foods__filters sushi__hide-scrollbar"
+        data-aos="fade-up"
+      >
+        <button class="popular-foods__filter-btn active">すべて</button>
+        <button class="popular-foods__filter-btn">
+          <img src="assets/sushi-9.png" alt="sushi 9" />寿司
+        </button>
+        <button class="popular-foods__filter-btn">
+          <img src="assets/sushi-8.png" alt="sushi 8" />ラーメン
+        </button>
+        <button class="popular-foods__filter-btn">
+          <img src="assets/sushi-7.png" alt="sushi 7" />うどん
+        </button>
+        <button class="popular-foods__filter-btn">
+          <img src="assets/sushi-6.png" alt="sushi 6" />団子
+        </button>
+        <button class="popular-foods__filter-btn">すべて</button>
+      </div>
+
+      <div class="popular-foods__catalogue" data-aos="fade-up">
+        <article class="popular-foods__card">
+          <img
+            class="popular-foods__card-image"
+            src="assets/sushi-12.png"
+            alt="sushi-12"
+          />
+          <h4 class="popular-foods__card-title">ヘズ寿司</h4>
+          <div class="popular-foods__card-details flex-between">
+            <div class="popular-foods__card-rating">
+              <img src="assets/star.svg" alt="star" />
+              <p>4.9</p>
+            </div>
+
+            <p class="popular-foods__card-price">¥2,300</p>
+          </div>
+        </article>
+
+        <article class="popular-foods__card active-card">
+          <img
+            class="popular-foods__card-image"
+            src="assets/sushi-11.png"
+            alt="sushi-11"
+          />
+          <h4 class="popular-foods__card-title">オリジナル寿司</h4>
+          <div class="popular-foods__card-details flex-between">
+            <div class="popular-foods__card-rating">
+              <img src="assets/star.svg" alt="star" />
+              <p>5.0</p>
+            </div>
+
+            <p class="popular-foods__card-price">¥2,100</p>
+          </div>
+        </article>
+
+        <article class="popular-foods__card">
+          <img
+            class="popular-foods__card-image"
+            src="assets/sushi-10.png"
+            alt="sushi-10"
+          />
+          <h4 class="popular-foods__card-title">ラーメン伝説</h4>
+          <div class="popular-foods__card-details flex-between">
+            <div class="popular-foods__card-rating">
+              <img src="assets/star.svg" alt="star" />
+              <p>4.7</p>
+            </div>
+
+            <p class="popular-foods__card-price">¥1,500</p>
+          </div>
+        </article>
+      </div>
+
+      <button class="popular-foods__button">
+        食べ物を探検する
+        <img src="assets/arrow-right.svg" alt="arrow-right" />
+      </button>
+    </section>
+
+    <section class="trending" id="food">
+      <section class="trending-sushi">
+        <div class="trending__content" data-aos="fade-right">
+          <p class="sushi__subtitle">トレンド / トレンド</p>
+          <h3 class="sushi__title">日本の寿司</h3>
+          <p class="sushi__description">
+            ここで最も美味しい寿司の味を感じてください。
+          </p>
+
+          <ul class="trending__list flex-between">
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>寿司を作る</p>
+            </li>
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>押し寿司</p>
+            </li>
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>裏巻き寿司</p>
+            </li>
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>握り寿司</p>
+            </li>
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>手巻き寿司</p>
+            </li>
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>いなり寿司</p>
+            </li>
+          </ul>
+        </div>
+        <div class="trending__image flex-center">
+          <img src="assets/sushi-5.png" alt="sushi-5" data-aos="fade-left" />
+
+          <div class="trending__arrow trending__arrow-left">
+            <img src="assets/arrow-vertical.svg" alt="arrow vertical" />
+          </div>
+
+          <div class="trending__arrow trending__arrow-bottom">
+            <img src="assets/arrow-horizontal.svg" alt="arrow horizontal" />
+          </div>
+        </div>
+      </section>
+
+      <div class="trending__discover" data-aos="zoom-in">
+        <p>発見する</p>
+      </div>
+
+      <section class="trending-drinks">
+        <div class="trending__image flex-center">
+          <img src="assets/sushi-4.png" alt="sushi-4" data-aos="fade-right" />
+
+          <div class="trending__arrow trending__arrow-top">
+            <img src="assets/arrow-horizontal.svg" alt="arrow horizontal" />
+          </div>
+
+          <div class="trending__arrow trending__arrow-right">
+            <img src="assets/arrow-vertical.svg" alt="arrow vertical"/>
+          </div>
+        </div>
+        <div class="trending__content" data-aos="fade-right">
+          <p class="sushi__subtitle">トレンド / トレンド</p>
+          <h3 class="sushi__title">日本の飲み物</h3>
+          <p class="sushi__description">
+            ここで最も美味しい日本の飲み物の味を感じてください。
+          </p>
+
+          <ul class="trending__list flex-between">
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>オルンチャ</p>
+            </li>
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>桜茶</p>
+            </li>
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>青汁</p>
+            </li>
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>お福茶</p>
+            </li>
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>昆布茶</p>
+            </li>
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>麦茶</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+    <section class="subscription flex-center" id="Services">
+      <h2 data-aos="flip-down">
+        オファーを受け取る <br />
+        直接受信トレイに
+      </h2>
+      <p data-aos="fade-up">美味しい寿司のニュースレターに登録する</p>
+
+      <div class="subscription__form" data-aos="fade-up">
+        <input type="text" placeholder="メールアドレスを入力">
+        <button>始める</button>
+      </div>
+    </section>
+
+    <footer class="footer flex-between">
+      <h3 class="footer__logo">
+        <span>美味しい</span>寿司
+      </h3>
+
+      <ul class="footer__nav">
+        <li><a href="#menu">メニュー</a></li>
+        <li><a href="#food">食べ物</a></li>
+        <li><a href="#services">サービス</a></li>
+        <li><a href="#about-us">私たちに関しては</a></li>
+      </ul>
+
+      <ul class="footer__social">
+        <li class="flex-center">
+          <img src="assets/facebook.svg" alt="facebook" />
+        </li>
+        <li class="flex-center">
+          <img src="assets/twitter.svg" alt="twitter" />
+        </li>
+        <li class="flex-center">
+          <img src="assets/instagram.svg" alt="instagram" />
+        </li>
+      </ul>
+    </footer>
+
+    <script type="module" src="/js/script.js"></script>
+    <script>
+      //=============== MODAL SCRIPT ===============
+      document.addEventListener("DOMContentLoaded", function() {
+        var modal = document.getElementById("restaurantInfoModal");
+        var span = document.getElementsByClassName("close")[0];
+
+        // Open the modal as soon as the website loads
+        modal.style.display = "block";
+
+        // Close the modal when the user clicks on the close button
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+
+        // Close the modal when the user clicks anywhere outside of the modal
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
